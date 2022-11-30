@@ -55,3 +55,5 @@ COMANDOS PLSQL consola
 passssss: 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
 
 se tiene q hacer un merge manual
+
+mensaje final en readme
