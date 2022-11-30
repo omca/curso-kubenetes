@@ -49,3 +49,6 @@ COMANDOS PLSQL consola
 - Para ver un listado con todas las tablas, vistas y secuencias escribe \z.
 -  Para salir de psql escribe \q.
 
+
+
+passssss: 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
