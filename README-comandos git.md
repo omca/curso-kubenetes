@@ -24,9 +24,4 @@ se le manda el commit a donde quiere ser revertido
 
 
 cambio 1
-
 cambio 2
-
-cambio 3
-
-cambio 4
