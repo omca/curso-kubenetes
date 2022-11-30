@@ -33,6 +33,7 @@ $ docker exec -it #idContainer# psql -U postgres    = entra la consola de postgr
 $ docker inspect #IDContainer#      = inspeccionar detalle de un container
 
 
+
 #EJECUTAR POSTGRES INSTALADA EN LA MACBOOK#
 docu: https://www.neoguias.com/como-conectarse-postgresql-desde-linea-comandos/
 $ psql BASE_DE_DATOS NOMBRE_USUARIO     -> password (123456)
