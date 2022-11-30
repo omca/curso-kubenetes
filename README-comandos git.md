@@ -18,3 +18,9 @@ La diferencia es que vuelve a un commit en especifico pero mantiene los cambios 
 $ git reset --soft #idcomit#
 
 es recomendable usar el reset --soft en vez de usar el reset --hard
+
+GIT REVERT: Revierte el commit actual, pero agrega un nuevo commit con la reversion. Y como parametro
+se le manda el commit a donde quiere ser revertido
+
+
+cambio 1
