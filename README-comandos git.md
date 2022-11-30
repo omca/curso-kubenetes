@@ -20,7 +20,12 @@ $ git reset --soft #idcomit#
 es recomendable usar el reset --soft en vez de usar el reset --hard
 
 GIT REVERT: Revierte el commit actual, pero agrega un nuevo commit con su reversion. Y como parametro
-se le manda el commit a donde quiere ser revertido
+se le manda el commit a donde quiere ser revertido. 
+Al revertir a un commit especifico no elimina ningun cambio del Working directory y hace un merge automatico,
+sino se tiene que hacer manual.
+
+$ git revert #idcommit#
+$ git
 
 
 cambio 1
