@@ -10,6 +10,9 @@ public class Test {
     public static void main(String[] args) {
 
 
+        LocalDateTime localDateTime = LocalDateTime.now();
+        System.out.println(localDateTime);
+
         //Create formatter
         DateTimeFormatter FOMATTER = DateTimeFormatter.ofPattern("MM/dd/yyyy'T'HH:mm:ss.SSS");
 
@@ -18,7 +21,8 @@ public class Test {
 
 
 //Local date time instance
-        LocalDateTime localDateTime = LocalDateTime.now();
+//        LocalDateTime localDateTime = LocalDateTime.now();
+        System.out.println(localDateTime);
 
 //Get formatted String
         String ldtString = FOMATTER.format(localDateTime);

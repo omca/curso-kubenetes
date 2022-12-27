@@ -15,6 +15,7 @@ COMANDOS DOCKERS
 #EJECUTAR DOCKER DE UN MICROSERVICIO
 $ docker run -p 8101:8001 e5c85f41240f
 
+
 #EJECUTAR POSTGRES DESDE DOCKER#
 docu: https://stackoverflow.com/questions/37099564/docker-how-can-run-the-psql-command-in-the-postgres-container
 $ docker pull postgres
@@ -32,6 +33,11 @@ $ docker exec -it #idContainer# psql -U postgres    = entra la consola de postgr
 
 $ docker inspect #IDContainer#      = inspeccionar detalle de un container
 
+$ docker exec -it #idcontainer# sh
+
+$ docker logs #idcontaier# -f (-f para ver log en vivo)
+
+$ docker start #idcontainer# -d (para ver log al iniciar POD)
 
 
 #EJECUTAR POSTGRES INSTALADA EN LA MACBOOK#
@@ -56,8 +62,47 @@ COMANDOS PLSQL consola
 
 
 # DATOS
-1. el comando ENTRYPOINT solo ejecuta cuando se ejecuta el contenedor de la imagen, al ejecutar el docker run a la imagen creada.
+1. el comando ENTRYPOINT            solo ejecuta cuando se ejecuta el contenedor de la imagen, al ejecutar el docker run a la imagen creada.
 Ej: java -jar #nombreJar.jar
 2. Cada instruccion dentro del dockerfile es una capa q se genera para la imagen, 
-   y estas capas se alamcenan en cache para que luego sea ejecutada desde la cache y asi su ejecucion sea mas rapida
-3.    
+   y estas capas se almacena en cache para que luego sea ejecutada desde la cache y asi su ejecucion sea mas rapida
+
+$ docker --help 
+# COMANDOS DOCKER IMAGENES
+$ docker images prune
+$ docker image prune
+# eliminar contenedor al stopearlo
+$ docker$ docker run --rm -p 8101:8001 e5c85f41240f (--rm elimina container cuando ejeuctar docker stop)
+# entrar de manera interactiva al POD
+$ docker run -p 8001:8001 --rm -it usuarios /bin/sh   
+    (-it /bin/sh    -> para que entre al POD directamente, el Dockerfile tiene q estar en CMD en vez de ENTRYPOINT)
+
+# crea imagen en base a un Dockerfile
+$ docker build -t usuarios . -f ./msvc-usuarios/Dockerfile
+
+# COMANDOS DOCKER CONTENEDORES 
+$ docker rm -f #id1# #id2# #id3#  (-f -> force)
+$ docker container prune (elimina container detenidos)
+
+#copiando archivo desde pc local hacia el pod
+$ docker cp ./Login.java ##idContainer:/app/Login.java
+$ docker cp ./Login.java 5807376c1c18:/app/Login.java
+
+#copiando archivo desde el pod hacia pc local
+$ docker cp 5807376c1c18:/app/Login.java .\Login2.java  (copiar archivo)
+$ docker cp 5807376c1c18:/app .\Test  (copiar el contenido del folder app al nuevo folder Test)
+
+#copiando log del microservicio del POD hacia PC local
+1. configurar .yml  logging.file.path = /app/logs
+2. en dockerfile crear un folder /app/logs
+3. ejecutar copiado 
+$ docker cp 715c4b843943:/app/logs \logs
+
+$ docker images inspect #idcontainer#
+$ docker inspect #idcontainer#
+
+# creando imagenes con etiquetas versionadas
+$ docker build -t usuarios:v2 . -f .\msvs-usuarios\Dockerfile
+$ docker run -p 8001:8001 --rm -d --name msvc-usuarios usuarios:v2  (--name establece un nombre para el POD)
+
+
