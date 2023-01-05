@@ -13,6 +13,9 @@ public class CursoUsuario {
     @Column(name="usuario_id", unique = true)
     private Long usuarioId;
 
+    @Column(name="curso_id", unique = true)
+    private Long cursoId;
+
     public Long getId() {
         return id;
     }
@@ -27,6 +30,14 @@ public class CursoUsuario {
 
     public void setUsuarioId(Long usuarioId) {
         this.usuarioId = usuarioId;
+    }
+
+    public Long getCursoId() {
+        return cursoId;
+    }
+
+    public void setCursoId(Long cursoId) {
+        this.cursoId = cursoId;
     }
 
     @Override

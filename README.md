@@ -26,6 +26,8 @@ $ docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postg
 $ docker run --name postgress-omar-local -e POSTGRES_PASSWORD=123456 -d postgres
     pass: 123456
 
+$ docker exec -it postgress-omar-local psql -U postgres msvc_cursos
+$ docker exec -it serverPostgresDocker psql -U postgres msvc_cursos
 $ docker exec -it postgress-omar-local psql -U postgres -W 123456
 
 $ docker exec -it #idContainer# psql -U postgres    = entra la consola de postgres
@@ -44,12 +46,8 @@ $ docker start #idcontainer# -d (para ver log al iniciar POD)
 docu: https://www.neoguias.com/como-conectarse-postgresql-desde-linea-comandos/
 
 1. Ir a la ruta /Library/PostgreSQL/11/bin/psql y ejecutar 
-   
-
 $ psql BASE_DE_DATOS NOMBRE_USUARIO     -> password (123456)
-
 $ /Library/PostgreSQL/11/bin/psql #database name# #database user#
-
 $ /Library/PostgreSQL/11/bin/psql msvc_cursos postgres
 
 COMANDOS PLSQL consola
@@ -60,9 +58,13 @@ COMANDOS PLSQL consola
 - Para ver un listado con todas las tablas, vistas y secuencias escribe \z.
 - Para salir de psql escribe \q.
 
+COMANDO PARA DETENER PSQL DE LA MAC
+$ sudo -u postgres /Library/PostgreSQL/11/bin/pg_ctl -D /Library/PostgreSQL/11/data stop
+COMANDO PARA EMPEZAR PSQL DE LA MAC
+$ sudo -u postgres /Library/PostgreSQL/11/bin/pg_ctl -D /Library/PostgreSQL/11/data start
 
 # DATOS
-1. el comando ENTRYPOINT            solo ejecuta cuando se ejecuta el contenedor de la imagen, al ejecutar el docker run a la imagen creada.
+1. el comando ENTRYPOINT -> solo ejecuta cuando se ejecuta el contenedor de la imagen, al ejecutar el docker run a la imagen creada.
 Ej: java -jar #nombreJar.jar
 2. Cada instruccion dentro del dockerfile es una capa q se genera para la imagen, 
    y estas capas se almacena en cache para que luego sea ejecutada desde la cache y asi su ejecucion sea mas rapida
@@ -103,6 +105,42 @@ $ docker inspect #idcontainer#
 
 # creando imagenes con etiquetas versionadas
 $ docker build -t usuarios:v2 . -f .\msvs-usuarios\Dockerfile
-$ docker run -p 8001:8001 --rm -d --name msvc-usuarios usuarios:v2  (--name establece un nombre para el POD)
+$ docker run -p 8001:8001 --rm -d --network spring --name msvc-usuarios usuarios   (--name establece un nombre para el POD)
+$ docker run -p 8002:8002 --rm -d --network spring --name msvc-cursos cursos 
+
+# instalar MYSQL en docker desktop
+# trae la imagen
+$ docker pull mysql:8
+# ejecuta el docker run para el mysql
+$ docker run -p #port externo#:5432 --name #nameServer# --network #nameRed# -e POSTGRES_PASSWORD=#password# -e POSTGRES_DB=#nameBD# -d #nameImagen:version#
+$ docker run -p 33060:3306 --name mysql-db --network spring -e MYSQL_ROOT_PASSWORD=sasa -e MYSQL_DATABASE=msvc_usuarios -d mysql:8
+
+# instalar POSTGRES en docker desktop
+# trae la imagen
+$ docker pull postgres:14-alpine
+# ejecuta el docker run para el postgres
+$ docker run -p #port externo#:5432 --name #nameServer# --network #nameRed# -e POSTGRES_PASSWORD=#password# -e POSTGRES_DB=#nameBD# -d #nameImagen:version#
+$ docker run -p 5532:5432 --name serverPostgresDocker --network spring -e POSTGRES_PASSWORD=sasa -e POSTGRES_DB=msvc_cursos -d postgres:14-alpine
 
 
+# PASSWORD MASTER POSTGRES -> 123456
+
+# CREAR VOLUMENES
+$ docker volume create mysql-volume
+$ docker volume create postgres-volume
+$ docker volume inspect mysql-volume
+
+# EJECUTAR BASE DE DATOS CON VOLUMENES PARA PERSISTIR LA DATA
+# en la ruta del docker mysql guarda la info de la BD en: /var/lib/mysql (esta en la documentacion)
+$ docker run -p 33060:3306 --name mysql-db --network spring -e MYSQL_ROOT_PASSWORD=sasa -e MYSQL_DATABASE=msvc_usuarios  -v data-mysql:/var/lib/mysql --restart=always -d mysql:8
+$ docker run -p 5532:5432 --name serverPostgresDocker --network spring -e POSTGRES_PASSWORD=sasa -e POSTGRES_DB=msvc_cursos -v data-postgres2:/var/lib/postgresql/data  -d postgres:14-alpine
+
+# ENTRAR AL DOCKER DE MYSQL
+$ docker exec -it #idcontainer# bash
+$ mysql -hmysql-db -uroot -p
+ -> ingresa password -> sasa \n
+ mysql> show databases; \n
+ mysql> \q  (salir de consola)
+
+
+# DOCKER: ARGUMENTS AND ENVIRONMENT VARIABLES

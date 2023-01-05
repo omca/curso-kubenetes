@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -72,7 +73,7 @@ public class CursoServiceImpl implements CursoService{
 
     @Override
     @Transactional
-    public Optional<Usuario> asignarUsuario(Usuario usuario, Long cursoId) {
+    public Optional<Usuario> asignarUsuario(Usuario usuario, Long cursoId)  {
         Optional<Curso> o = repository.findById(cursoId);
         if (o.isPresent()) {
             Usuario usuarioMsvc = client.detalle(usuario.getId());
