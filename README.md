@@ -81,6 +81,7 @@ $ docker run -p 8001:8001 --rm -it usuarios /bin/sh
 
 # crea imagen en base a un Dockerfile
 $ docker build -t usuarios . -f ./msvc-usuarios/Dockerfile
+$ docker build -t cursos . -f ./msvc-cursos/Dockerfile
 
 # COMANDOS DOCKER CONTENEDORES 
 $ docker rm -f #id1# #id2# #id3#  (-f -> force)
@@ -133,7 +134,7 @@ $ docker volume inspect mysql-volume
 # EJECUTAR BASE DE DATOS CON VOLUMENES PARA PERSISTIR LA DATA
 # en la ruta del docker mysql guarda la info de la BD en: /var/lib/mysql (esta en la documentacion)
 $ docker run -p 33060:3306 --name mysql-db --network spring -e MYSQL_ROOT_PASSWORD=sasa -e MYSQL_DATABASE=msvc_usuarios  -v data-mysql:/var/lib/mysql --restart=always -d mysql:8
-$ docker run -p 5532:5432 --name serverPostgresDocker --network spring -e POSTGRES_PASSWORD=sasa -e POSTGRES_DB=msvc_cursos -v data-postgres2:/var/lib/postgresql/data  -d postgres:14-alpine
+$ docker run -p 5532:5432 --name serverPostgresDocker --network spring -e POSTGRES_PASSWORD=sasa -e POSTGRES_DB=msvc_cursos -v data-postgres2:/var/lib/postgresql/data --restart=always -d postgres:14-alpine
 
 # ENTRAR AL DOCKER DE MYSQL
 $ docker exec -it #idcontainer# bash
@@ -143,4 +144,50 @@ $ mysql -hmysql-db -uroot -p
  mysql> \q  (salir de consola)
 
 
+# AUTENTICAR POR SSH DESDE GITHUB - LISTA DE PASOS - DOCUMENTACION
+https://docs.github.com/es/authentication/connecting-to-github-with-ssh
+
 # DOCKER: ARGUMENTS AND ENVIRONMENT VARIABLES
+# seteando valores ENV en Dockerfile and properties
+- .properties
+    server.port=${PORT:8001}
+- Dockerfile
+    ENV PORT 8002
+    EXPOSE $PORT
+  
+# sobreescribir variable ENV en el momento del despliegue, en tiempo de ejecucion
+8001:8090  (8001 -> puerto externo, y 8090 -> puerto interno que usa la aplicacion)
+$ docker run -p 8001:8090 --env PORT=8090 --rm -d --network spring --name msvc-usuarios usuarios 
+$ docker run -p 8002:8091 --env PORT=8091 --rm -d --network spring --name msvc-cursos cursos
+
+# otra alternativa es externeliza las variables de entorno a un archivo por fuera
+- creamos un archivo .env
+    PORT=8091  (8092)
+- el -p 8001:8090 lo que hace es abrir los puertos de comunicacion tanto hacia adentro como hacia afuera  
+$ docker run -p 8001:8091 --env-file ./msvc-usuarios/.env --rm -d --network spring --name msvc-usuarios usuarios
+$ docker run -p 8002:8092 --env-file ./msvc-cursos/.env --rm -d --network spring --name msvc-cursos cursos
+
+# ARGUMENTOS -> Se usan solo en el dockerfile, los argumento son como variable que se usaran dentro de un dockerfile
+$ ARG PORT_APP=8001
+# AL EJECUTAR LA IMAGEN SOBRE ESCRIBIR LA VARIABLE DE ARGUMENTO
+$ docker build -t usuarios . -f ./msvc-usuarios/Dockerfile --build-arg PORT_APP=8080  
+  (quiere decir que el puerto interno será seteando al momento de construir la imagen)
+
+# LOS ARGUMENTS se usan para construccion de imagenes, se usan en los Dockerfile
+# LOS ENVIROONMENTS se usan para contruccion de contenedores, Sus variables se pueden usar en los properties o en los yml
+
+# USAR LOS ARGUMENTS EN MULTISTAGE 
+Se declaran al inicio como variable global, y luego en cada FROM se van usando VAR MSVC_NAME
+
+`$ docker build -t usuarios . -f ./msvc-usuarios/Dockerfile`
+
+`$ docker build -t cursos . -f ./msvc-cursos/Dockerfile`
+
+`$ docker run -p 9001:8001 --rm -d --network spring --name msvc-usuarios usuarios`
+
+`$ docker run -p 9002:8002 --rm -d --network spring --name msvc-cursos cursos`
+
+# EJECUTAR DOCKER RUN CON VARIABLES DE ENTORNO DE BASE DE DATOS Y PUERTOS
+`$ docker run -p 9001:8001 --env-file ./msvc-usuarios/.env --rm -d --network spring --name msvc-usuarios usuarios` 
+
+`$ docker run -p 9002:8002 --env-file ./msvc-cursos/.env --rm -d --network spring --name msvc-cursos cursos`

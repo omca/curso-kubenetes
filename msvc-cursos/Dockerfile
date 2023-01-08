@@ -24,5 +24,6 @@ WORKDIR /app
 RUN mkdir ./logs
 # copiar el JAR de la construccion anterior 'builder'
 COPY --from=builder /app/msvc-cursos/target/msvc-cursos-0.0.1-SNAPSHOT.jar .
-EXPOSE 8002
+ENV PORT 8002
+EXPOSE $PORT
 CMD ["java", "-jar", "msvc-cursos-0.0.1-SNAPSHOT.jar"]
