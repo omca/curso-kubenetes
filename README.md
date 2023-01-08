@@ -191,3 +191,12 @@ Se declaran al inicio como variable global, y luego en cada FROM se van usando V
 `$ docker run -p 9001:8001 --env-file ./msvc-usuarios/.env --rm -d --network spring --name msvc-usuarios usuarios` 
 
 `$ docker run -p 9002:8002 --env-file ./msvc-cursos/.env --rm -d --network spring --name msvc-cursos cursos`
+
+
+# DOCKER COMPOSE  (docker-compose.yml)
+$ docker-compose up -d
+$ docker-compose down
+$ docker-compose down -v  (con -v tb va a eliminar los volumenes)
+
+# VOLVER A CONSTRUIR IMAGENES DESDE EL DOCKER-COMPOSE
+$ docker-compose up --build -d
