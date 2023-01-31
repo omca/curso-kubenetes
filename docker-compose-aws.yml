@@ -22,7 +22,7 @@ services:
       POSTGRES_PASSWORD: sasa
       POSTGRES_DATABASE: msvc_cursos
     volumes:
-      - data-postgres3:/var/lib/postgresql/data
+      - data-postgres:/var/lib/postgresql/data
     restart: always
     networks:
       - spring
@@ -39,14 +39,14 @@ services:
 #    env_file:
 #      - ./msvc-usuarios/.env
     environment:
-      PORT: 8001
-      DB_HOST: mysql-db
-      DB_PORT: 3306
-      DB_NAME: msvc_usuarios
-      DB_USERNAME: root
-      DB_PASSWORD: sasa
-      CURSOS_URL: msvc-cursos
-      CURSOS_PORT: 8002
+      PORT:8001
+      DB_HOST:mysql-db
+      DB_PORT:3306
+      DB_NAME:msvc_usuarios
+      DB_USERNAME:root
+      DB_PASSWORD:sasa
+      CURSOS_URL:msvc-cursos
+      CURSOS_PORT:8002
     networks:
       - spring
     depends_on:
@@ -64,14 +64,14 @@ services:
 #    env_file:
 #      - ./msvc-cursos/.env
     environment:
-      PORT: 8002
-      DB_HOST: serverPostgresDocker
-      DB_PORT: 5432
-      DB_NAME: msvc_cursos
-      DB_USERNAME: postgres
-      DB_PASSWORD: sasa
-      USUARIOS_URL: msvc-usuarios
-      USUARIOS_PORT: 8001
+      PORT:8002
+      DB_HOST:serverPostgresDocker
+      DB_PORT:5432
+      DB_NAME:msvc_cursos
+      DB_USERNAME:postgres
+      DB_PASSWORD:sasa
+      USUARIOS_URL:msvc-usuarios
+      PORT_URL:8001
     networks:
       - spring
     depends_on:
@@ -82,7 +82,7 @@ volumes:
   data-mysql:
     name: data-mmysql
   data-postgres:
-    name: data-postgres3
+    name: data-postgres
 networks:
   spring:
     name: spring

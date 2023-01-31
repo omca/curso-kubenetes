@@ -6,14 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="msvc-cursos" />
         <module name="msvc-usuarios" />
+        <module name="msvc-cursos" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="curso-kubernetes" target="17" />
-      <module name="msvc-cursos" target="17" />
-      <module name="msvc-usuarios" target="17" />
+      <module name="curso-kubernetes" target="14" />
+      <module name="msvc-cursos" target="14" />
+      <module name="msvc-usuarios" target="14" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

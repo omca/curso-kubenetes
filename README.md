@@ -200,3 +200,15 @@ $ docker-compose down -v  (con -v tb va a eliminar los volumenes)
 
 # VOLVER A CONSTRUIR IMAGENES DESDE EL DOCKER-COMPOSE
 $ docker-compose up --build -d
+
+# DOCKER HUB
+$ docker login
+$ docker logout
+$ docker tag usuarios calderonomar48/usuarios-udemy
+$ docker push calderonomar48/usuarios-udemy
+$ docker tag cursos calderonomar48/cursos-udemy
+$ docker push calderonomar48/cursos-udemy
+
+# RECUPERAR IMAGEN DE UN DOCKER HUB
+$ docker pull calderonomar48/usuarios-udemy
+$ docker pull calderonomar48/cursos-udemy
