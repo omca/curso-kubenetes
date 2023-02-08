@@ -213,6 +213,4 @@ $ docker push calderonomar48/cursos-udemy
 $ docker pull calderonomar48/usuarios-udemy
 $ docker pull calderonomar48/cursos-udemy
 
-segundo commit
-
-tercer commit
+primer commit main
