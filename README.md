@@ -214,13 +214,12 @@ $ docker pull calderonomar48/usuarios-udemy
 $ docker pull calderonomar48/cursos-udemy
 
 segundo commit en feature
-<<<<<<< HEAD
-
 
 cuarto commit en feature
 
 mas commits en master
 
 cuarto commit
-=======
->>>>>>> 027eeb2 (segundo commit)
+
+
+cuarto commit en feature
