@@ -10,11 +10,7 @@
         <module name="msvc-cursos" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="curso-kubernetes" target="14" />
-      <module name="msvc-cursos" target="14" />
-      <module name="msvc-usuarios" target="14" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="17" />
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
