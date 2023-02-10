@@ -7,6 +7,7 @@ GIT RESET HARD
 1. elimina los cambios actuales sin comitear y vuelve al ultimo commit forzozamente (si no comiteamos nada, se perderán los cambios)
    $ git reset --hard
    
+
 2. elimina el ultimo commit en el working directory y retorna al penultimo commit.
 $ git reset --hard HEAD^
 
