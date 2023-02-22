@@ -51,9 +51,14 @@ $ git commit --no-edit --amend
 ---
 ###GIT REBASE
 Nos permite modificar cualquier commit de forma individua, es decir modifica el historial de commits eliminando, dividiendo y modificando los commits existentes.
-No solo modifica el ultimo commit, sino cualquier commit. 
-> $ git rebase -i  
-> 
+No solo modifica el ultimo commit, sino nos da la posibilidad de actualizar cualquier commit. 
+> $ git rebase -i HEAD~2
+> el git rebase temuestra los commits de manera inversa como te los muestra el git log
+> $ esc + i
+> $ escribir 'edit' en el commit que quieres modificar el mensaje
+> $ git commit -m "update commit ciwht rebase" --amend
+> $ git rebase --continue
+> $ git log --oneline 
 >
 
 
