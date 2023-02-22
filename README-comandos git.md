@@ -59,7 +59,9 @@ No solo modifica el ultimo commit, sino nos da la posibilidad de actualizar cual
 > $ git commit -m "update commit ciwht rebase" --amend
 > $ git rebase --continue
 > $ git log --oneline 
->
+
+No solo modifica el ultimo commit, sino cualquier commit. 
+> $ git rebase -i  
 
 
 
