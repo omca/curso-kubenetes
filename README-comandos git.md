@@ -65,9 +65,24 @@ No solo modifica el ultimo commit, sino nos da la posibilidad de actualizar cual
 No solo modifica el ultimo commit, sino cualquier commit. 
 > $ git rebase -i  
 
-###GIT REBASe SQUASH
+###GIT REBASE SQUASH
+el rebase squash va a fusionar todo en el ultimo commit
 > $ git rebase -i HEAD~2
+> $ esc + i
+> $ pick 342932
+> $ squash 23232
+- abre una siguiente ventana 
+- nos muestra los 2 commits y solo nos quedamos con uno, y se genera un nuevo hash (tener cuidado con el uso de este comando, ya que si pusheamos en el remote puede generar conflictor y sobreescribir cambios de otros usuarios)
 
 
+
+###GIT RESET 
+es un comando para deshacer cambios
+- soft -> mover hacia atras en el historial sin perder los cambios, solo cambio el puntero del HEAD
+- hard -> mover al historico pero pierde los cambios, elimina los commits. (es mas peligroso realizar este cambio)
+
+###GIT CHERRY PICK
+- es un comando para llevar commits de una rama hacia otra rama
+- su uso es para traer funcionalidades antiguas de alguna rama que se trabajó hace tiempo
 
 
