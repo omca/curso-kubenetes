@@ -1,30 +1,44 @@
-# 1. cambiar de commmit
+# **CAMBIAR DE COMMIT**
 
 $ git log --oneline
 
-GIT RESET HARD
+### 1. GIT RESET HARD
 
-1. elimina los cambios actuales sin comitear y vuelve al ultimo commit forzozamente (si no comiteamos nada, se perderán los cambios)
-   $ git reset --hard
+1. elimina los cambios actuales sin comitear y vuelve al ultimo commit forzozamente (si no comiteamos nada, se perderán los cambios) 
+- $ git reset --hard
    
 2. elimina el ultimo commit en el working directory y retorna al penultimo commit.
-$ git reset --hard HEAD^
+- $ git reset --hard HEAD^
 
-GIT SOFT RESET: sirve para cambiar a un commit SHA en especifico. 
+### 2. GIT RESET SOFT
+Sirve para cambiar a un commit SHA en especifico. 
 La diferencia es que vuelve a un commit en especifico pero mantiene los cambios en el Working directory (localhost)
 
-$ git reset --soft #idcomit#
+- $ git reset --soft #idcomit#
 
 es recomendable usar el reset --soft en vez de usar el reset --hard
 
-GIT REVERT: Revierte el commit actual, pero agrega un nuevo commit con su reversion. Y como parametro
+### 3. GIT REVERT
+Revierte el commit actual, pero agrega un nuevo commit con su reversion. Y como parametro
 se le manda el commit a donde quiere ser revertido. 
 Al revertir a un commit especifico no elimina ningun cambio del Working directory y hace un merge automatico,
 sino se tiene que hacer manual.
+
 El REVERT es para mantener los cambios en el history.
 
-$ git revert #idcommit#
-$ git
+- $ git revert #idcommit#
+- $ git revert --continue
 
-cambio 1
-cambio 2
+FUSIONAR RAMAS
+$ feature> git rebase master  (oculta los commits de la rama feature, y trae los commits de master, y al final pone los commits ocultos al inicio)
+$ git merge feature (al final hace un merge con feature pero de forma fast-forward)
+
+---
+###GIT REBASE
+> $ git rebase -i  
+> 
+>
+
+
+
+
