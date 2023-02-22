@@ -33,8 +33,25 @@ FUSIONAR RAMAS
 $ feature> git rebase master  (oculta los commits de la rama feature, y trae los commits de master, y al final pone los commits ocultos al inicio)
 $ git merge feature (al final hace un merge con feature pero de forma fast-forward)
 
+### MODIFICAR MENSAJE DE UN COMMIT EXISTENTE
+ver commits con archivos modificados
+- $ git log --stat
+
+agregar archivos  aun commmit
+$ git commit --no-edit --amend
+
+
+### AGREGAR ARCHIVOS A COMMITS YA EXISTENTES
+ver commits con archivos modificados
+- $ git log --stat
+
+agregar archivos  aun commmit
+$ git commit --no-edit --amend
+
 ---
 ###GIT REBASE
+Nos permite modificar cualquier commit de forma individua, es decir modifica el historial de commits eliminando, dividiendo y modificando los commits existentes.
+No solo modifica el ultimo commit, sino cualquier commit. 
 > $ git rebase -i  
 > 
 >
