@@ -97,4 +97,4 @@ es un comando para deshacer cambios
 - es un comando para llevar commits de una rama hacia otra rama
 - su uso es para traer funcionalidades antiguas de alguna rama que se trabajó hace tiempo
 
-
+### ELIMINAR UN COMMMIT  PUNTUAL

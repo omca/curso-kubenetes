@@ -1,8 +1,8 @@
 version: "3.8"
 services:
 
-  serverPostgresDocker:
-    container_name: serverPostgresDocker
+  postgresomar14:
+    container_name: postgresomar14
     image: postgres:14-alpine
     ports:
       - "5532:5432"
@@ -28,7 +28,7 @@ services:
 #      - ./msvc-cursos/.env
     environment:
       PORT: 8002
-      DB_HOST: serverPostgresDocker
+      DB_HOST: postgresomar14
       DB_PORT: 5432
       DB_NAME: msvc_cursos
       DB_USERNAME: postgres
@@ -38,7 +38,7 @@ services:
     networks:
       - spring
     depends_on:
-      - serverPostgresDocker
+      - postgresomar14
     restart: always
 
 volumes:

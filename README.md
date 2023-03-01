@@ -15,7 +15,6 @@ COMANDOS DOCKERS
 #EJECUTAR DOCKER DE UN MICROSERVICIO
 $ docker run -p 8101:8001 e5c85f41240f
 
-
 #EJECUTAR POSTGRES DESDE DOCKER#
 docu: https://stackoverflow.com/questions/37099564/docker-how-can-run-the-psql-command-in-the-postgres-container
 $ docker pull postgres
@@ -26,9 +25,11 @@ $ docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postg
 $ docker run --name postgress-omar-local -e POSTGRES_PASSWORD=123456 -d postgres
     pass: 123456
 
-$ docker exec -it postgress-omar-local psql -U postgres msvc_cursos
+$ docker run --name serverPostgresDocker -e POSTGRES_PASSWORD=sasa -d postgres
+
 $ docker exec -it serverPostgresDocker psql -U postgres msvc_cursos
-$ docker exec -it postgress-omar-local psql -U postgres -W 123456
+$ docker exec -it postgresomar14 psql -U postgres msvc_cursos
+$ docker exec -it postgresomar14 psql -U postgres -W 123456
 
 $ docker exec -it #idContainer# psql -U postgres    = entra la consola de postgres
     postgres=#  \list           = lista las BD actuales
@@ -107,7 +108,8 @@ $ docker inspect #idcontainer#
 # creando imagenes con etiquetas versionadas
 $ docker build -t usuarios:v2 . -f .\msvs-usuarios\Dockerfile
 $ docker run -p 8001:8001 --rm -d --network spring --name msvc-usuarios usuarios   (--name establece un nombre para el POD)
-$ docker run -p 8002:8002 --rm -d --network spring --name msvc-cursos cursos 
+$ docker run -p 8002:8002 --rm -d --network spring --name msvc-cursos cursos
+$ docker run -p 8002:8002 --rm -d --name msvc-cursos cursos
 
 # instalar MYSQL en docker desktop
 # trae la imagen
@@ -121,7 +123,7 @@ $ docker run -p 33060:3306 --name mysql-db --network spring -e MYSQL_ROOT_PASSWO
 $ docker pull postgres:14-alpine
 # ejecuta el docker run para el postgres
 $ docker run -p #port externo#:5432 --name #nameServer# --network #nameRed# -e POSTGRES_PASSWORD=#password# -e POSTGRES_DB=#nameBD# -d #nameImagen:version#
-$ docker run -p 5532:5432 --name serverPostgresDocker --network spring -e POSTGRES_PASSWORD=sasa -e POSTGRES_DB=msvc_cursos -d postgres:14-alpine
+$ docker run -p 5532:5432 --name postgresomar14 --network spring -e POSTGRES_PASSWORD=sasa -e POSTGRES_DB=msvc_cursos -d postgres:14-alpine
 
 
 # PASSWORD MASTER POSTGRES -> 123456
@@ -134,7 +136,7 @@ $ docker volume inspect mysql-volume
 # EJECUTAR BASE DE DATOS CON VOLUMENES PARA PERSISTIR LA DATA
 # en la ruta del docker mysql guarda la info de la BD en: /var/lib/mysql (esta en la documentacion)
 $ docker run -p 33060:3306 --name mysql-db --network spring -e MYSQL_ROOT_PASSWORD=sasa -e MYSQL_DATABASE=msvc_usuarios  -v data-mysql:/var/lib/mysql --restart=always -d mysql:8
-$ docker run -p 5532:5432 --name serverPostgresDocker --network spring -e POSTGRES_PASSWORD=sasa -e POSTGRES_DB=msvc_cursos -v data-postgres2:/var/lib/postgresql/data --restart=always -d postgres:14-alpine
+$ docker run -p 5532:5432 --name postgresomar14 --network spring -e POSTGRES_PASSWORD=sasa -e POSTGRES_DB=msvc_cursos -v data-postgres2:/var/lib/postgresql/data --restart=always -d postgres:14-alpine
 
 # ENTRAR AL DOCKER DE MYSQL
 $ docker exec -it #idcontainer# bash

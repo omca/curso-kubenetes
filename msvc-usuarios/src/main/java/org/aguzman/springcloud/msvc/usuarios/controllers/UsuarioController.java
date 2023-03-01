@@ -30,7 +30,7 @@ public class UsuarioController {
     @GetMapping
     public Map<String, List<Usuario>> listar() {
         System.out.println("holaaa");
-        return Collections.singletonMap("users", service.listar());
+        return Collections.singletonMap("Users", service.listar());
     }
 
     @GetMapping("/{id}")
