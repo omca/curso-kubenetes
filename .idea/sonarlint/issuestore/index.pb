@@ -26,18 +26,12 @@ V
 &xdeploy/postgres/service-postgres.yaml,1/0/1075ded119f253ae0ae70601260d2b58541e512d
 Y
 )xdeploy/postgres/deployment-postgres.yaml,0/d/0dee9273448bb09ecef9837a6b6256a2eb7edb28
-à
-Xmsvc-cursos/src/main/java/org/aguzman/springcloud/msvc/cursos/MsvcCursosApplication.java,2/1/217020ab518e1abc2cebcb0d7f42c98893f5db70
 é
 ^msvc-usuarios/src/main/java/org/aguzman/springcloud/msvc/usuarios/MsvcUsuariosApplication.java,e/f/efffac9963ea02dcc11a62a132bd3cc8a7f80e15
 F
 msvc-cursos/schema.sql,0/6/06aca04ca86929acdaef52fb337dba482a480d74
-ç
-]msvc-cursos/src/test/java/org/aguzman/springcloud/msvc/cursos/MsvcCursosApplicationTests.java,2/d/2d8d666e3b515d4615622002b55639987402f90f
 C
 msvc-cursos/pom.xml,c/9/c992d90804b37b1ae4d2f0e63baab9da8288400a
-7
-pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
 @
 2. README-AWS.md,d/1/d1b1e612d45b6edeb7f5b9bf2d29446dc737b990
 R
@@ -52,3 +46,21 @@ B
 docker-compose.yml,3/5/35b8c13cf2eb2a194eada000eb310d65aed53b2a
 S
 #xdeploy/users/service-usuarios.yaml,f/f/ff5d4fee9e239e7a8475e6662d06fe09f6cfaacc
+G
+3. README-KUBERNETES.md,d/9/d9b44dc5a6bd49dd90efba73efccd77c63cafd10
+V
+&xdeploy/users/deployment-usuarios.yaml,a/f/af49489093d96ae1b6fad70920f20d54c91ecc41
+F
+foldergit/japanese.txt,9/9/9943827221185563677182490e009e55c629b519
+?
+logs/spring.log,7/6/76a20666cd8f97e7a29654b5cc02219795841972
+E
+foldergit/spanish.txt,c/2/c269e0e0c45803a0586f42b4e017a0452a136cfa
+E
+foldergit/quechua.txt,6/f/6fd442b334e4ce7b842a5b2bc632bd4409f5b6a1
+E
+foldergit/iceland.txt,1/9/19ab364fab06a5061bd30ac2667dd61609cfd690
+E
+foldergit/english.txt,f/3/f3abff88603a98d1371ffc441fee12fb6187ee47
+F
+README-comandos git.md,d/4/d476b368d7271c28076ccfbbeb9aaf46d0a8a80e

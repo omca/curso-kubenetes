@@ -37,7 +37,7 @@ $ git merge feature (al final hace un merge con feature pero de forma fast-forwa
 ver commits con archivos modificados
 - $ git log --stat
 
-agregar archivos  aun commmit
+agregar archivos  a un commmit
 $ git commit --no-edit --amend
 
 
@@ -73,8 +73,7 @@ No solo modifica el ultimo commit, sino nos da la posibilidad de actualizar cual
 > $ git rebase --continue
 > $ git log --oneline 
 
->>>>>>> c7283834a0fc15ad6e090db4df8740fe01d1325c
-No solo modifica el ultimo commit, sino cualquier commit. 
+> No solo modifica el ultimo commit, sino cualquier commit. 
 > $ git rebase -i  
 
 ###GIT REBASE SQUASH
