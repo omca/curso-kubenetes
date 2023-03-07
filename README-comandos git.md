@@ -98,3 +98,19 @@ es un comando para deshacer cambios
 - su uso es para traer funcionalidades antiguas de alguna rama que se trabajó hace tiempo
 
 ### ELIMINAR UN COMMMIT  PUNTUAL
+
+
+
+## COMANDOS AVANZADOS
+
+#### 1. CREAR Y SUBIR NUEVA RAMA AL REPO REMOTE
+$ git checkout 232j23
+$ git checkout -b oldFeature1  (nuevo branch en base al commit)
+$ git push --set-upstream origin oldFeature1 (pushea la rama en el repo remote)
+
+#### VER LOG INTERACTIVO
+$ git log --oneline --decorate --all --graph
+
+
+
+
