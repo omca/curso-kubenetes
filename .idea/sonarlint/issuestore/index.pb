@@ -40,8 +40,6 @@ U
 %xdeploy/course/deployment-cursos.yaml,c/0/c045cc0eff47dda68cccc9c6ccf29d72aa834b47
 F
 msvc-cursos/Dockerfile,4/b/4bf2c313456efff4643e285fda6742f8cebeb3c6
-9
-	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 B
 docker-compose.yml,3/5/35b8c13cf2eb2a194eada000eb310d65aed53b2a
 S
