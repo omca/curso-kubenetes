@@ -62,5 +62,3 @@ E
 foldergit/iceland.txt,1/9/19ab364fab06a5061bd30ac2667dd61609cfd690
 E
 foldergit/english.txt,f/3/f3abff88603a98d1371ffc441fee12fb6187ee47
-F
-README-comandos git.md,d/4/d476b368d7271c28076ccfbbeb9aaf46d0a8a80e

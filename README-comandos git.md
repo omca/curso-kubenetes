@@ -48,10 +48,9 @@ ver commits con archivos modificados
 agregar archivos  aun commmit
 $ git commit --no-edit --amend
 
----
+
 ###GIT REBASE
 Nos permite modificar cualquier commit de forma individua, es decir modifica el historial de commits eliminando, dividiendo y modificando los commits existentes.
-<<<<<<< HEAD
 No solo modifica el ultimo commit, sino nos da la posibilidad de actualizar cualquier commit.
 
 1. PASO 1 REBASE
@@ -97,3 +96,19 @@ es un comando para deshacer cambios
 - su uso es para traer funcionalidades antiguas de alguna rama que se trabajó hace tiempo
 
 ### ELIMINAR UN COMMMIT  PUNTUAL
+
+
+
+## COMANDOS AVANZADOS
+
+#### 1. CREAR Y SUBIR NUEVA RAMA AL REPO REMOTE
+$ git checkout 232j23
+$ git checkout -b oldFeature1  (nuevo branch en base al commit)
+$ git push --set-upstream origin oldFeature1 (pushea la rama en el repo remote)
+
+#### VER LOG INTERACTIVO
+$ git log --oneline --decorate --all --graph
+
+
+
+
