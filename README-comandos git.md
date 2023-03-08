@@ -13,11 +13,13 @@ $ git log --oneline
    
 2. elimina el ultimo commit en el working directory y retorna al penultimo commit.
 - $ git reset --hard HEAD^
+- $ git push -f <NOMBRE-REMOTO> <RAMA-LOCAL>
+- $ git push -f origin main  (forzar el push hacia el repo remoto)
 
 ### 2. GIT RESET SOFT
 Sirve para cambiar a un commit SHA en especifico. 
-La diferencia es que vuelve a un commit en especifico pero mantiene los cambios en el Working directory (localhost)
-
+La diferencia es que vuelve a un cgommit en especifico pero mantiene los cambios en el Working directory (localhost)
+s
 - $ git reset --soft #idcomit#
 
 es recomendable usar el reset --soft en vez de usar el reset --hard
@@ -54,8 +56,9 @@ $ git commit --no-edit --amend
 
 
 ###GIT REBASE
-Nos permite modificar cualquier commit de forma individua, es decir modifica el historial de commits eliminando, dividiendo y modificando los commits existentes.
-No solo modifica el ultimo commit, sino nos da la posibilidad de actualizar cualquier commit.
+es un comando que nos permite alterar el historial de commits: 
+- Puedes modificar los mensajes comiteados  (git commit amend)
+- Puedes fusionar commits (squash)
 
 1. PASO 1 REBASE
 > $ git rebase -i HEAD~2
@@ -66,6 +69,7 @@ No solo modifica el ultimo commit, sino nos da la posibilidad de actualizar cual
 2. PASO 2 REBASE
 > $ git rebase --continue
 > $ git log --oneline 
+> $ git push -f origin main
 =======
 No solo modifica el ultimo commit, sino nos da la posibilidad de actualizar cualquier commit. 
 > $ git rebase -i HEAD~2
@@ -113,4 +117,4 @@ $ git log --oneline --decorate --all --graph
 
 hola 1
 hola 2
-
+hola 3
