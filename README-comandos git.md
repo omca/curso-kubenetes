@@ -1,4 +1,8 @@
-# **CAMBIAR DE COMMIT**
+###GIT RESET
+Es un comando para deshacer cambios, puedes saltar entre varios commits
+
+- soft -> mover hacia atras en el historial sin perder los cambios, solo cambio el puntero del HEAD
+- hard -> mover al historico pero pierde los cambios, elimina los commits. (es mas peligroso realizar este cambio)
 
 $ git log --oneline
 
@@ -85,11 +89,6 @@ el rebase squash va a fusionar todo en el ultimo commit
 - nos muestra los 2 commits y solo nos quedamos con uno, y se genera un nuevo hash (tener cuidado con el uso de este comando, ya que si pusheamos en el remote puede generar conflictor y sobreescribir cambios de otros usuarios)
 
 
-
-###GIT RESET 
-es un comando para deshacer cambios
-- soft -> mover hacia atras en el historial sin perder los cambios, solo cambio el puntero del HEAD
-- hard -> mover al historico pero pierde los cambios, elimina los commits. (es mas peligroso realizar este cambio)
 
 ###GIT CHERRY PICK
 - es un comando para llevar commits de una rama hacia otra rama
