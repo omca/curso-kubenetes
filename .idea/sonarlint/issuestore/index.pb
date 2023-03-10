@@ -1,6 +1,4 @@
 
-Ž
-^msvc-cursos/src/main/java/org/aguzman/springcloud/msvc/cursos/controllers/CursoController.java,0/b/0b37c8e1d8a1819845474903eb6a2ff4ca3e5c3d
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302

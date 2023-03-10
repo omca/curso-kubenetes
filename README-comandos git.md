@@ -1,12 +1,12 @@
 ###GIT RESET
-Es un comando para deshacer cambios, puedes saltar entre varios commits
+Es un comando para deshacer cambios y para movernos y saltar entre varios commits
 
 - soft -> mover hacia atras en el historial sin perder los cambios, solo cambio el puntero del HEAD
 - hard -> mover al historico pero pierde los cambios, elimina los commits. (es mas peligroso realizar este cambio)
 
 $ git log --oneline
 
-### 1. GIT RESET HARD
+### 1. GIT RESET HARD  (elimina los cambios del  working directory)
 
 1. elimina los cambios actuales sin comitear y vuelve al ultimo commit forzozamente (si no comiteamos nada, se perderán los cambios) 
 - $ git reset --hard
@@ -16,7 +16,7 @@ $ git log --oneline
 - $ git push -f <NOMBRE-REMOTO> <RAMA-LOCAL>
 - $ git push -f origin main  (forzar el push hacia el repo remoto)
 
-### 2. GIT RESET SOFT
+### 2. GIT RESET SOFT  (mantiene los cambios del  working directory)
 Sirve para cambiar a un commit SHA en especifico. 
 La diferencia es que vuelve a un cgommit en especifico pero mantiene los cambios en el Working directory (localhost)
 s
