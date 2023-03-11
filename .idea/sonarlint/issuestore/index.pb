@@ -1,7 +1,4 @@
 
-:
-
-.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 K
 docker-compose-usuarios.yml,2/4/24b87bb5517279f33b0e30716a8e4a3a0446d172
 E
@@ -10,12 +7,8 @@ H
 msvc-usuarios/Dockerfile,d/e/de40dde59f25d8bcce2561fd6e1df3af43f1c2ba
 ”
 dmsvc-usuarios/src/main/java/org/aguzman/springcloud/msvc/usuarios/controllers/UsuarioController.java,8/f/8f1c35274a0d1d04c10e327dfc1d7c20642985fa
-P
- xdeploy/mysql/service-mysql.yaml,1/0/108c52269c928253ed286e686fcca0f33e525624
 S
 #xdeploy/mysql/deployment-mysql.yaml,b/b/bb4b647f54dfe2d1fce3bb08ab692b1d020bb04d
-@
-msvc-cursos/.env,b/e/bed46cd06363076a2750e530c33ee52c21c33a31
 F
 docker-compose-aws.yml,2/6/266ddc98c8064b1e5dacbcb2dd3df5e60b03391d
 I
@@ -28,8 +21,6 @@ Y
 ^msvc-usuarios/src/main/java/org/aguzman/springcloud/msvc/usuarios/MsvcUsuariosApplication.java,e/f/efffac9963ea02dcc11a62a132bd3cc8a7f80e15
 F
 msvc-cursos/schema.sql,0/6/06aca04ca86929acdaef52fb337dba482a480d74
-C
-msvc-cursos/pom.xml,c/9/c992d90804b37b1ae4d2f0e63baab9da8288400a
 @
 2. README-AWS.md,d/1/d1b1e612d45b6edeb7f5b9bf2d29446dc737b990
 R
@@ -42,8 +33,6 @@ B
 docker-compose.yml,3/5/35b8c13cf2eb2a194eada000eb310d65aed53b2a
 S
 #xdeploy/users/service-usuarios.yaml,f/f/ff5d4fee9e239e7a8475e6662d06fe09f6cfaacc
-G
-3. README-KUBERNETES.md,d/9/d9b44dc5a6bd49dd90efba73efccd77c63cafd10
 V
 &xdeploy/users/deployment-usuarios.yaml,a/f/af49489093d96ae1b6fad70920f20d54c91ecc41
 F
