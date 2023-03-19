@@ -13,7 +13,7 @@ spec:
         app: msvc-usuarios
     spec:
       containers:
-      - image: calderonomar48/usuarios-udemy:v5
+      - image: calderonomar48/usuarios-udemy:v7
         name: usuarios-udemy
         ports:
         - containerPort: 8001
