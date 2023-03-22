@@ -17,3 +17,40 @@ spec:
         name: usuarios-udemy
         ports:
         - containerPort: 8001
+
+        env:
+          - name: PORT
+            valueFrom:
+              configMapKeyRef:
+                name: msvc-usuarios
+                key: port
+          - name: DB_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: msvc-usuarios
+                key: db_host
+          - name: DB_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: msvc-usuarios
+                key: db_port
+          - name: DB_NAME
+            valueFrom:
+              configMapKeyRef:
+                name: msvc-usuarios
+                key: database
+          - name: DB_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: msvc-usuarios
+                key: username
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: msvc-usuarios
+                key: password
+          - name: CURSOS_URL
+            valueFrom:
+              configMapKeyRef:
+                name: msvc-usuarios
+                key: curso_url
