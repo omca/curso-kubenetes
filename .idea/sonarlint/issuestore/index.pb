@@ -1,10 +1,4 @@
 
-E
-msvc-usuarios/pom.xml,3/5/35db51b5be2bab04530d7f81843e70f086e9aaf0
-H
-msvc-usuarios/Dockerfile,d/e/de40dde59f25d8bcce2561fd6e1df3af43f1c2ba
-é
-^msvc-usuarios/src/main/java/org/aguzman/springcloud/msvc/usuarios/MsvcUsuariosApplication.java,e/f/efffac9963ea02dcc11a62a132bd3cc8a7f80e15
 @
 2. README-AWS.md,d/1/d1b1e612d45b6edeb7f5b9bf2d29446dc737b990
 F
@@ -38,8 +32,6 @@ F
 msvc-cursos/schema.sql,0/6/06aca04ca86929acdaef52fb337dba482a480d74
 V
 &xdeploy/postgres/service-postgres.yaml,1/0/1075ded119f253ae0ae70601260d2b58541e512d
-C
-msvc-cursos/pom.xml,c/9/c992d90804b37b1ae4d2f0e63baab9da8288400a
 F
 docker-compose-aws.yml,2/6/266ddc98c8064b1e5dacbcb2dd3df5e60b03391d
 K
@@ -50,8 +42,6 @@ R
 "xdeploy/course/service-cursos.yaml,0/a/0a8da7b956e6757473259bd5430939fcd2841f8f
 ï
 emsvc-usuarios/src/main/java/org/aguzman/springcloud/msvc/usuarios/repositories/UsuarioRepository.java,b/b/bbb004c25fabfd1b5615f123732270eeb16861b6
-î
-dmsvc-usuarios/src/main/java/org/aguzman/springcloud/msvc/usuarios/controllers/UsuarioController.java,8/f/8f1c35274a0d1d04c10e327dfc1d7c20642985fa
 í
 bmsvc-usuarios/src/main/java/org/aguzman/springcloud/msvc/usuarios/services/UsuarioServiceImpl.java,5/1/516616e6457bb2ef8070a1dfd69101a0b9bddb09
 à
@@ -61,15 +51,9 @@ Xmsvc-cursos/src/main/java/org/aguzman/springcloud/msvc/cursos/services/CursoSer
 P
  xdeploy/mysql/service-mysql.yaml,1/0/108c52269c928253ed286e686fcca0f33e525624
 è
-_msvc-usuarios/src/main/java/org/aguzman/springcloud/msvc/usuarios/clients/CursoClienteRest.java,2/5/256ec0c6d7e40f4eb5a0a7e06090a073a0bcf10b
-è
 _msvc-cursos/src/main/java/org/aguzman/springcloud/msvc/cursos/repositories/CursoRepository.java,8/a/8af853ceba57fdd4f54b0c1d6301393ad305cc9a
 B
 msvc-usuarios/.env,0/4/0469e942a4e8d7af4a5b9965c5e065884065c795
-7
-pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
-å
-\msvc-cursos/src/main/java/org/aguzman/springcloud/msvc/cursos/clients/UsuarioClientRest.java,e/b/eb44f092cacdd8fe4ecc292e909f07c15c1965d0
 K
 xdeploy/mysql/mysql-pv.yaml,c/c/cc914adf75dd5dfa7fb4edbbcebef4d6bec87a84
 L
@@ -78,9 +62,35 @@ Q
 !xdeploy/postgres/postgres-pv.yaml,6/d/6d4fbe29fbb8a752e7aa18a9e25f8245a6fc4e11
 R
 "xdeploy/postgres/postgres-pvc.yaml,c/8/c83b2178bc1489bdc43cb4471a364364fe0da958
-P
- xdeploy/users/service-users.yaml,4/9/49a800bf101c78ef09dca6b627b31d5a5903cc4a
 é
 ^msvc-cursos/src/main/java/org/aguzman/springcloud/msvc/cursos/controllers/CursoController.java,0/b/0b37c8e1d8a1819845474903eb6a2ff4ca3e5c3d
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+S
+#xdeploy/mysql/deployment-mysql.yaml,b/b/bb4b647f54dfe2d1fce3bb08ab692b1d020bb04d
+Y
+)xdeploy/postgres/deployment-postgres.yaml,0/d/0dee9273448bb09ecef9837a6b6256a2eb7edb28
+L
+xdeploy/utils/configMap.yaml,2/1/21a2335be671d4a8097902e4c01be70c9bdb6ea0
+I
+xdeploy/utils/secret.yaml,2/3/23fb33ea3273869203af49e77714e682f3562bca
+7
+pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
 à
 Xmsvc-cursos/src/main/java/org/aguzman/springcloud/msvc/cursos/MsvcCursosApplication.java,2/1/217020ab518e1abc2cebcb0d7f42c98893f5db70
+C
+msvc-cursos/pom.xml,c/9/c992d90804b37b1ae4d2f0e63baab9da8288400a
+E
+msvc-usuarios/pom.xml,3/5/35db51b5be2bab04530d7f81843e70f086e9aaf0
+å
+\msvc-cursos/src/main/java/org/aguzman/springcloud/msvc/cursos/clients/UsuarioClientRest.java,e/b/eb44f092cacdd8fe4ecc292e909f07c15c1965d0
+U
+%xdeploy/course/deployment-cursos.yaml,c/0/c045cc0eff47dda68cccc9c6ccf29d72aa834b47
+P
+ xdeploy/users/service-users.yaml,4/9/49a800bf101c78ef09dca6b627b31d5a5903cc4a
+S
+#xdeploy/users/deployment-users.yaml,7/4/74fcbdeabf4c8d3aa5260d6bb4ce912ae7a7f83c
+G
+3. README-KUBERNETES.md,d/9/d9b44dc5a6bd49dd90efba73efccd77c63cafd10
+î
+dmsvc-usuarios/src/main/java/org/aguzman/springcloud/msvc/usuarios/controllers/UsuarioController.java,8/f/8f1c35274a0d1d04c10e327dfc1d7c20642985fa

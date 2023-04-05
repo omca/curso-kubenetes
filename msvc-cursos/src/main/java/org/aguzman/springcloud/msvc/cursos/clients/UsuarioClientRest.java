@@ -6,7 +6,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(name="msvc-usuarios", url="${msvc.usuarios.url}")
+//@FeignClient(name="msvc-usuarios", url="${msvc.usuarios.url}")
+// ya no usamos el param de URL, porque el servicio ya esta registrado en un Registre por el discovery de Spring Cloud,
+// ahora lo va a encontrar solo por el parametro name
+@FeignClient(name="msvc-usuarios")
 //@FeignClient(name="msvc-usuarios", url="${msvc.usuarios.url}:${msvc.usuarios.port}")
 //@FeignClient(name="msvc-usuarios", url="localhost:9001")
 public interface UsuarioClientRest {
